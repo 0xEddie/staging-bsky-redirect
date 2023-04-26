@@ -1,0 +1,22 @@
+{
+  "name": "Staging Bluesky Redirect",
+  "description": "Redirect bsky.app links to staging.bsky.app",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": { "scripts": ["background.js"] },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://staging.bsky.app/*", "*://bsky.app/*"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://bsky.app/*"
+  ]
+}
